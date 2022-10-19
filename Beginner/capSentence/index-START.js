@@ -8,7 +8,9 @@ return the equivalent of the sentence when capitalised. E.g
 
 
 function capSentence(text) {
-   // Code goes here
+  return text.split(' ')
+    .map(x => x[0].toUpperCase() + x.slice(1).toLowerCase())
+    .join(' ')
 }
 
 
