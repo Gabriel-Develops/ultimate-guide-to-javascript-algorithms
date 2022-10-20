@@ -6,9 +6,17 @@ don't. E.g
 */
 
 
-
+// Inline
 function isAnagram(stringA, stringB) {
-    // Code goes here
+    return stringA.split('').sort().join('').toLowerCase() === stringB.split('').sort().join('').toLowerCase()
+}
+
+// With sub Function 
+function isAnagram(stringA, stringB) {
+    function sanitizeString(string) {
+        return string.toLowerCase().split('').filter(x => x >= 'a' && x <= 'z').sort().join('')
+    }
+    return sanitizeString(stringA) === sanitizeString(stringB)
 }
 
 
