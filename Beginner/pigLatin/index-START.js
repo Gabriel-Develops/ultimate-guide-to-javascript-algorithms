@@ -10,7 +10,11 @@ Translate the provided string to pig latin by following the rules below:
 */
 
 function pigLatin(str) {
-  // Code goes here
+  const VOWELS_ARRAY = ['a', 'e', 'i', 'o', 'u']
+  const firstVowelIndex = [...str].findIndex(x => VOWELS_ARRAY.includes(x))
+  const suffix = firstVowelIndex === 0 ? 'way' : 'ay'
+
+  return str.slice(firstVowelIndex) + str.slice(0, firstVowelIndex) + suffix
 }
 
 module.exports = pigLatin;
