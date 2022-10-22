@@ -8,12 +8,19 @@ than 1(index 0), but less than 2(index 1).
 */
 
 
-
+// For ... of Loop
 function whereIBelong(arr, num) {
-   // Code goes here
-
+   let index = 0
+   for (const x of arr) {
+       num > x && index++
+   }
+   return index
 }
 
+// Filter method
+function whereIBelong(arr, num) {
+   return arr.filter(x => num > x).length
+}
 
 
 module.exports = whereIBelong
